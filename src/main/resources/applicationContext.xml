@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+    <context:annotation-config/>
+    <bean class="com.skillsoft.auto.Engine" id="engineBMW">
+    <property value="335" name="horsepower"/>
+    <property value="5500" name="maxRPM"/>
+    <property value="3.0" name="displacement"/>
+    <property value="I-6" name="cylinderConfig"/>
+    <property value="premium unleaded" name="recommendedFuel"/>
+
+</bean>
+    <bean class="com.skillsoft.auto.Gearbox" id="gearboxBMW">
+    <property value="Shiftable Automatic" name="type"/>
+    <property value="8" name="numGears"/>
+</bean>
+    <bean class="com.skillsoft.auto.Car" id="carBean">
+    <property value="Sedan" name="type"/>
+    <property value="BMW 740 2021" name="model"/>
+    <property value="88000" name="price"/>
+    <property value="25" name="combinedFuelEconomy"/>
+    <property name="notes">
+    <list>
+    <value>Internal combustion engine</value>
+    <value>3-year service included</value>
+</list>
+</property>
+    <property name="availableSeatOptions">
+    <set>
+    <ref bean="seatOptionOne"/>
+    <ref bean="seatOptionTwo"/>
+    <ref bean="seatOptionThree"/>
+</set>
+</property>
+</bean>
+    <bean class="com.skillsoft.auto.Seats" id="seatOptionOne">
+    <property value="Bucket Leather" name="type"/>
+    <property value="Black" name="color"/>
+    <property value="true" name="heated"/>
+</bean>
+    <bean class="com.skillsoft.auto.Seats" id="seatOptionTwo">
+    <property value="Bucket Vinyl" name="type"/>
+    <property value="Beige" name="color"/>
+    <property value="true" name="heated"/>
+</bean>
+    <bean class="com.skillsoft.auto.Seats" id="seatOptionThree">
+    <property value="Bucket Leather" name="type"/>
+    <property value="Brown" name="color"/>
+    <property value="false" name="heated"/>
+</bean>
+</beans>
